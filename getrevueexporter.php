@@ -83,8 +83,8 @@ class GetRevueExporter {
 		echo '<p>' . __( 'To use this plugin, you need to create an API key for your GetRevue account. Follow the instructions below to create an API key:', 'getrevueexporter' ) . '</p>';
 		echo '<ol>';
 		echo '<li>' . __( 'Go to your GetRevue account settings.', 'getrevueexporter' ) . '</li>';
-		echo '<li>' . __( 'Click on the "API" tab.', 'getrevueexporter' ) . '</li>';
-		echo '<li>' . __( 'Click on the "Generate API key" button.', 'getrevueexporter' ) . '</li>';
+		echo '<li>' . __( 'Click on the "Integrations" tab.', 'getrevueexporter' ) . '</li>';
+		echo '<li>' . __( 'On the Bottom of the page find "Your API key is" information.', 'getrevueexporter' ) . '</li>';
 		echo '<li>' . __( 'Copy the API key and paste it into the field below.', 'getrevueexporter' ) . '</li>';
 		echo '</ol>';
 	}
@@ -175,10 +175,10 @@ class GetRevueExporter {
 	 * @return array
 	 */
 	public function get_newsletters( $api_key ) {
-		$url      = 'https://www.getrevue.co/api/v2/newsletters.json';
+		$url      = 'https://www.getrevue.co/api/v2/issues';
 		$response = wp_remote_get( $url, array(
 			'headers' => array(
-				'Authorization' => 'Bearer ' . $api_key,
+				'Authorization' => 'Token ' . $api_key,
 			),
 		) );
 
@@ -197,7 +197,7 @@ class GetRevueExporter {
 			$newsletters[] = array(
 				'id'    => $newsletter['id'],
 				'title' => $newsletter['title'],
-				'date'  => $newsletter['published_at'],
+				'date'  => $newsletter['sent_at'],
 			);
 		}
 
