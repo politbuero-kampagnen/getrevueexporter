@@ -163,7 +163,6 @@ class GetRevueExporter {
 				echo '<p>' . __( 'No newsletters found.', 'getrevueexporter' ) . '</p>';
 			}
 
-			echo '</
 			echo '</form>';
 		}
 	}
