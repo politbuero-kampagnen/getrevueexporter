@@ -5,7 +5,7 @@
  * Description: Exports newsletters from a GetRevue account and allows the user to choose which newsletters to export and whether they should be saved as draft posts or published posts.
  * Author: politbuero-kampagnen.ch
  * Author URI: https://politbuero-kampagnen.ch
- * Version: 1.0.0
+ * Version: 0.1.1
  * License: GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: getrevueexporter
